@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color: #000; text-align: center; font-weight: bolder;">
+      {{'Choose Language' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div
+    style=" display:flex;justify-content:center;align-items:center;width: 80%; margin: 0 auto !important;height: 50%;">
+    <!-- Languages -->
+
+
+    <div style="color:white; width: 100% !important;margin-top: 10px !important;">
+
+      <form style="padding: 10px !important;text-align: center;">
+        <div style="display: flex;justify-content: space-around;">
+          <button style="padding: 5px 10px !important;" ion-button outline color="light" value="en"
+            class="language">{{'English' | translate}}</button>
+          <button style="padding: 5px 10px !important;" ion-button outline color="light" value="ar"
+            class="language">{{'Arabic'|translate}}</button>
+        </div>
+
+        <div style="margin:10px 0px !important;height: 3px; background-color: #000;"> </div>
+        <h4 style="text-align: center; color:#000"> {{'Choose Country'|translate}} </h4>
+        <div style="display: flex;justify-content: center;">
+          <div style="width: 100%;text-align: center;">
+            <img src="../../assets/images/Egypt-Flag-1-icon (1).png" class="country" name="Country" Value="410">
+          </div>
+          <div style="width: 100%;text-align: center;">
+            <img src="../../assets/images/Lebanon-icon.png" class="country" name="Country" value="Lebanon">
+          </div>
+        </div>
+
+        <ion-button fill="dark" shape="round" style="border: 5px solid darkblue;
+        border-radius: 19px;" routerLink="/login" (click)="gotologin()">{{'Start'|translate}}
+        </ion-button>
+        <!-- <button ion-button
+          style="background-color: white;color: #37bed2;padding: 10px 25px !important;border-radius: 30px;font-weight: 600;"
+          (click)="gotologin()">{{'Chooselanguage.Start'|translate}}</button> -->
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Confirm Reservatation' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-card style="width:100%; height:540px">
+        <ion-item color="light">
+          <ion-thumbnail slot="start">
+            <img style="border-top-left-radius: 15px;
+              border-top-right-radius: 15px;" [src]="avatar">
+          </ion-thumbnail>
+          <ion-label>
+            <div>
+              <h2 style="font-weight:bold">
+                <ion-icon class="ion-icon2" name="person-outline" slot="start"></ion-icon> {{name}}
+              </h2>
+              <p>
+                <ion-icon class="ion-icon2" name="call-outline" slot="start"></ion-icon>{{phone}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="locate-outline" slot="start"></ion-icon> {{address}}
+              </p>
+            </div>
+          </ion-label>
+        </ion-item>
+        <hr style="border:1px dashed darkgray; margin-top:0px !important">
+        <ion-row>
+          <div style="display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: -4%;">
+            <div style="margin-left: 10px;">
+              <h5> {{speciality}} <ion-icon name="checkbox-outline" slot="start"></ion-icon>
+              </h5>
+            </div>
+            <div style="margin-right: 10px;">
+              <h5>{{price}} LE <ion-icon name="cash-outline" slot="end"></ion-icon>
+              </h5>
+            </div>
+          </div>
+          <div style="margin-left: auto; margin-right: auto;">
+            <h5>{{waiting_time}}<ion-icon name="time-outline" slot="end"></ion-icon>
+            </h5>
+          </div>
+        </ion-row>
+        <ion-grid class="profileGrid">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;"> {{'Patient name' | translate}} </h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;"> {{username}} </h6>
+              </div>
+            </ion-col>
+
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;">{{'Patient number' | translate}}</h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;">{{mobile}}</h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;"> {{'Resevation Date' | translate}} </h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;">{{date}}</h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;"> {{'Reservation Time' | translate}} </h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;">{{time}}</h6>
+              </div>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+
+        <ion-row>
+          <ion-col size="12">
+            <div style="text-align: center;">
+              <ion-button color="secondary" (click)="FinishBooking()"> {{'Finish Booking' | translate}}</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

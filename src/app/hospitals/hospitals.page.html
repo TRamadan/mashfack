@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Hospitals' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+  <ion-searchbar [(ngModel)]="searchTerm" mode="ios"></ion-searchbar>
+</ion-toolbar>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-card style="width:100%; height:auto; overflow: hidden;" *ngFor="let h of Hospitals">
+        <ion-item color="light">
+          <ion-thumbnail slot="start">
+            <img style="border-top-left-radius: 15px;
+            border-top-right-radius: 15px;" [src]="h.avatar">
+          </ion-thumbnail>
+          <ion-label>
+            <div>
+              <h2 style="font-weight:bold">
+                <ion-icon class="ion-icon2" name="person-outline" slot="end"></ion-icon>{{h.name}}
+              </h2>
+              <p>
+                <ion-icon class="ion-icon2" name="locate-outline" slot="end"></ion-icon>{{h.address}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="call-outline" slot="end"></ion-icon> {{h.phone}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="eye-outline" slot="end"></ion-icon>{{h.views}}
+                {{'customer view' | translate}}
+              </p>
+            </div>
+          </ion-label>
+        </ion-item>
+        <ion-row>
+          <ion-col size="12">
+            <div style="text-align: center;">
+              <ion-button color="secondary" (click)="gotoclinicsunderhost(h.id)"> {{'Book now' | translate}}
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

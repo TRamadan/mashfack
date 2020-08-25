@@ -1,0 +1,139 @@
+ion-content{
+    --ion-background-color:#f7f7f7;
+ }
+ .contttt{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }  
+
+  *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.page{
+
+    //padding-bottom: 30px;
+    background-size: 100% 110%;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+   // background-color: #6DD1E0;
+    //color: #2496A7;
+}
+
+.first-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /*background-color: #A3EEF5;*/
+    
+}
+
+.general-div{
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+    color:white;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+}
+
+.general-div h6 i{
+    color:#ED8A19;
+}
+
+.second-div{
+    text-align: center;
+    width: 100%;
+    padding: 25px;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.second-div div span{
+    font-weight: 600;
+}
+
+.second-div div i {
+    color:#ED8A19;
+}
+/* End Of Header div */
+
+/* Start OF Comments Div */
+
+.comments{
+    width: 100%;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 350px;
+    overflow: auto;
+    
+}
+
+
+.star {
+color:  rgb(247, 153, 30);
+font-size: 14px;
+}
+
+ion-icon{
+    color : rgb(247, 153, 30)
+}
+.comment{
+    margin-bottom: 20px;
+    width: 90%;
+    padding: 5px 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: white 2px solid;
+
+}
+
+.row-1{
+    padding: 0px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.row-2{
+    padding: 0px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.row-3{
+    padding: 0px 60px;
+    width: 100%;
+    text-align: right;
+}
+
+/* Input Comment */
+
+.comment-input{
+    width: 100%;
+    padding:  0 30px !important;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 10px !important;
+}
+.comment-input input {
+    width: 100%;
+    border:0;
+    border-radius: 10px;
+    margin: auto;
+    padding:  10px 30px !important;
+}
+ 

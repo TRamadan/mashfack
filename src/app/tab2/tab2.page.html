@@ -1,0 +1,121 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align: center; font-weight: bolder;">
+      {{'My Profile' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="profileGrid">
+    <ion-row class="ion-align-items-center">
+
+      <ion-col col-9 class="profileImg" (click)="ClickInput()">
+        <div>
+          <form>
+            <input style="padding: 5px 20px !important;margin-top: 10px !important;display: none;" type="file"
+              name="avatar" id="uploadInput" (change)="changeListener($event.target.files)">
+            <ion-avatar>
+              <img [src]="avatar"
+                style="border-top-right-radius : 15px; border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; height: auto; width: 80px" />
+            </ion-avatar>
+          </form>
+        </div>
+        <!-- <div>
+          <img [src]="avatar" style="height: 100px;" />
+        </div> -->
+      </ion-col>
+
+
+
+      <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;"> {{'Name' | translate}} </h6>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="itemData">
+          <h6 class="h6"> {{name}}</h6>
+        </div>
+      </ion-col>
+
+      <!-- <ion-col col-9>
+        <div class="itemLabel">
+          <h6 style="margin: 0;"> {{'Last Name'|translate}} </h6>
+        </div>
+      </ion-col>
+      <ion-col col-12>
+        <div class="itemData">
+          <h6> {{lastName}} </h6>
+        </div>
+      </ion-col> -->
+
+      <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;"> {{'Phone' | translate}}</h6>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="itemData">
+          <h6 class="h6">{{phone}}</h6>
+        </div>
+      </ion-col>
+
+      <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;"> {{'Age' | translate}} </h6>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="col">
+        <div class="itemData">
+          <h6 class="h6">{{age}}</h6>
+        </div>
+      </ion-col>
+
+      <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;"> {{'Gender' | translate}}</h6>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="itemData">
+          <h6 class="h6">{{gender}}</h6>
+        </div>
+      </ion-col>
+
+      <!-- <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;">Height</h6>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="itemData">
+          <h6> <span>{{height}}</span> m</h6>
+        </div>
+      </ion-col> -->
+
+      <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;"> {{'weight' | translate}}</h6>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="itemData">
+          <h6 class="h6"> <span> {{weight}}</span> K.g</h6>
+        </div>
+      </ion-col>
+
+      <ion-col size="9" class="col">
+        <div class="itemLabel">
+          <h6 style="margin: 0;">{{'Hare Diseases' | translate}}</h6>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <div class="itemData">
+          <h6 class="h6">{{diseases}}</h6>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

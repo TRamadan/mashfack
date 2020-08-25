@@ -1,0 +1,87 @@
+<ion-content [fullscreen]="true">
+  <ion-grid style="margin-top: -5%;">
+    <!-- Logo Row -->
+    <ion-row class="ion-justify-content-center">
+      <ion-col size='6' class="text-center">
+        <div style="margin-left:auto; margin-right:auto; display:block; border-radius: 50%;">
+          <img src="../../assets/images/icon.png" style="border-radius: 50%;
+          height: 128px; margin-top:6%">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-stretch">
+      <ion-col size='6' class="text-center">
+        <ion-card class="bg-white py-3" (click)="gotospeciality()">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/Untitled-1.png" style="width: 40%; height:40%">
+            <h6> {{'Choose' | translate}} {{'Speciality' | translate}} </h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size='6' class="text-center">
+        <ion-card class="bg-white py-3" (click)="gotohospitalsandclinics()" style="height: 74%;">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/مستشفيات.png" height="40px">
+            <h6> {{'Hospitals' | translate}} {{'And Clinics' | translate}} </h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size='6' class="text-center">
+        <ion-card routerLink="/pharmacydetails" style="height:86%" class="bg-white py-3">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/صيدليات.png" style="width:40%; height:40%">
+            <h6> {{'Pharmacies' | translate}} </h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size='6' class="text-center">
+        <ion-card class="bg-white py-3" (click)="GenderSelect5()">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/معامل.png" style="width:40%; height:40%">
+            <h6> {{'Lab' | translate}} {{'analysis' | translate}} </h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size='6' class="text-center">
+        <ion-card class="bg-white py-3">
+          <ion-card-content class="text-center" (click)="GenderSelect4()">
+            <img src="../../assets/images/3.png" style="width:40%; height:40%">
+            <h6> {{'Centers' | translate}} {{'X-Ray' | translate}} </h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size='6' class="text-center">
+        <ion-card class="bg-white py-3" (click)="GenderSelect()" style="height: 88%">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/تمريض.png" style="width:40%; height:40%;">
+            <h6>{{'Nursing' | translate}}</h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size='6' class="text-center">
+        <ion-card style="height:74%" class="bg-white py-3" (click)="GenderSelect2()">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/سحب عينه منزليه.png" style="height:48px;  width:40%;">
+            <h6>{{'Home lab analysis'|translate}}</h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size='6' class="text-center">
+        <ion-card class="bg-white" (click)="GenderSelect3()" style="height: 113px;">
+          <ion-card-content class="text-center">
+            <img src="../../assets/images/زياره منزليه.png" style="width:40%; height:40%">
+            <h6>
+              {{'Home Visiting' | translate}}
+            </h6>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

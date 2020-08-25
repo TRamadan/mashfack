@@ -1,0 +1,213 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Choose your doctor' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="col">
+        <ion-slides style="height:70px" pager="false" [options]="slideOptsTwo" #slideWithNav2
+          (ionSlideDidChange)="SlideDidChange(sliderTwo,slideWithNav2)">
+          <ion-slide style="width: 98.5px !important;
+          margin-right: -10% !important;" *ngFor="let d of work_days;">
+            <div class="box-2">
+              <div class="box-3" (click)="choosedate(d)">
+                {{d}}
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-card style="width:100%; height:970px">
+        <ion-item color="light">
+          <ion-thumbnail slot="start">
+            <img style="border-top-left-radius: 15px;
+            border-top-right-radius: 15px;" [src]="avatar">
+          </ion-thumbnail>
+          <ion-label>
+            <div>
+              <h2 style="font-weight:bold">
+                <ion-icon class="ion-icon2" name="person-outline" slot="start"></ion-icon>{{'Name' | translate}}
+                :{{name}}
+              </h2>
+              <p>
+                <ion-icon class="ion-icon2" name="checkbox-outline" slot="start"></ion-icon>
+                {{'speciality' | translate}} :{{speciality}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="locate-outline" slot="start"></ion-icon> {{'address' | translate}}
+                :{{address}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="call-outline" slot="end"></ion-icon>{{'phone' | translate}} :{{phone}}
+              </p>
+            </div>
+          </ion-label>
+        </ion-item>
+
+        <ion-row>
+          <div style="margin-left:auto; margin-right: auto;">
+            <h5 style="color: #000;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bold;
+            margin-bottom: 0px !important;
+            font-size: 103%;
+            margin-top:4%;">
+              {{'Slide to the left to add to favoraits' | translate}}
+            </h5>
+          </div>
+          <ion-item-sliding>
+            <ion-item-options side="end">
+              <ion-item-option color="secondary">
+                <ion-icon class="ion-icon-color" slot="icon-only" name="heart" (click)="addtofav(id)"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+            <ion-list lines="none">
+              <ion-item style="padding-left: 0px !important;">
+                <ion-label style="text-align: center; font-size:larger; font-weight: bolder;">
+                  {{'Add to favoraits' | translate}}
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-item-sliding>
+          <ion-col size="12">
+            <div>
+              <h6 style="text-align: center; color:#000; font-weight: bolder;">
+                {{'Available periods' | translate}}
+              </h6>
+            </div>
+            <div *ngIf="IsDateSelected == true && form_to.length <=0" style="text-align: center;
+            color: #000;
+            font-size: 19px;
+            font-weight: bold;">
+              {{'There no periods under this date' | translate}}
+            </div>
+            <ion-slides *ngIf="IsDateSelected == true" style="height:30px" pager="false" [options]="slideOptsThree"
+              #slideWithNav3 (ionSlideDidChange)="SlideDidChange(sliderThree,slideWithNav3)">
+              <ion-slide style="width: 98.5px !important;
+              margin-right: -10% !important;" *ngFor="let x of form_to">
+                <ion-button size="default" color="light" class="button-class" (click)="chooseperiod(x.id)">
+                  {{x.from}} -- {{x.to}}
+                </ion-button>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+
+          <ion-col size="12">
+            <div>
+              <h6 style="text-align: center; font-size:large; font-weight: bold; color:#000">
+                {{'Available times' | translate}}
+              </h6>
+              <div *ngIf="IsPeriodSelected == true && Times.length <= 0" style="text-align: center;
+              color: #000;
+              font-size: 19px;
+              font-weight: bold;">
+                {{'There is no times now' | translate}}
+              </div>
+              <ion-slides *ngIf="IsPeriodSelected == true" style="height:30px" pager="false" [options]="slideOptsOne"
+                #slideWithNav1 (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav1)">
+                <ion-slide style="width: 98.5px !important;
+              margin-right: -10% !important;" *ngFor="let t of Times">
+                  <ion-button size="default" color="light" class="button-class" (click)="choosetime(t)">
+                    {{t}}
+                  </ion-button>
+                </ion-slide>
+              </ion-slides>
+            </div>
+          </ion-col>
+        </ion-row>
+        <hr style="border:1px dashed darkgray; margin-top:0px !important">
+        <ion-row>
+          <div style="display: flex;
+          width: 100%;
+          justify-content: space-between;
+          margin-top: -4%;">
+            <div style="margin-left: 10px;">
+              <h5> {{'speciality' | translate}} {{speciality}} <ion-icon name="checkbox-outline" slot="start">
+                </ion-icon>
+              </h5>
+            </div>
+            <div style="margin-right: 10px;">
+              <h5> {{'price' | translate}} {{price}} <ion-icon name="cash-outline" slot="end"></ion-icon>
+              </h5>
+            </div>
+          </div>
+          <div style="margin-left: auto; margin-right: auto;">
+            <h5>{{'waiting time' |translate}}{{waiting_time}}<ion-icon name="time-outline" slot="end"></ion-icon>
+            </h5>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div>
+              <ion-card style="border-radius: 15px;">
+                <ion-card-title style="text-align: center; color:#000; font-weight:bolder">
+                  {{'Doctor information' | translate}}
+                </ion-card-title>
+                <ion-card-content style="text-align: center; color:#000; font-weight: bolder;">
+                  {{info}}
+                </ion-card-content>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+
+        <ion-grid class="profileGrid">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;">{{'Edit this name for another person' | translate}}</h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;">{{'Patient name' | translate}} </h6>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <ion-item style="width:100%">
+                <ion-input [(ngModel)]="username" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;"> {{'Edit this number for another person' | translate}}
+                </h6>
+              </div>
+            </ion-col>
+            <ion-col size="9" class="col">
+              <div class="itemLabel">
+                <h6 style="margin: 0; font-weight: bolder;"> {{'Patient mobile number' | translate}} </h6>
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <ion-item style="width:100%">
+                <ion-input [(ngModel)]="mobile" type="tel" maxlength="15"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-row>
+          <div style="margin-left: auto;
+          margin-right: auto;">
+            <ion-button shape="round" color="secondary" (click)="gotofinal()">{{'Continue' | translate}}<ion-icon
+                class="ion-icon-color" name="chevron-forward" slot="end">
+              </ion-icon>
+            </ion-button>
+
+          </div>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

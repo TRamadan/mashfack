@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="text-align:center; font-weight:bolder;">
+      {{'Appointments' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <div *ngIf="AllDates.length == 0" style="display: flex; margin-top: 74%;
+                margin-left: 77px;">
+          <img src="../../assets/images/close.png" style="width: 7%;">
+          <h5 style="margin-left: 18px;
+                  margin-bottom: 0px !important; font-weight:bold;">{{'There is no dates for now' | translate}}</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-card style="width:100%; height:auto; overflow: hidden;" *ngFor="let d of AllDates; let i = index">
+        <ion-item color="light">
+          <ion-thumbnail slot="start">
+            <img style="border-top-left-radius: 15px;
+                border-top-right-radius: 15px;" [src]="d.avatar">
+          </ion-thumbnail>
+          <ion-label>
+            <div>
+              <h2 style="font-weight:bold">
+                <ion-icon class="ion-icon2" name="person-outline" slot="end"></ion-icon> {{'Name' | translate}} :
+                {{d.name}}
+              </h2>
+              <p>
+                <ion-icon class="ion-icon2" name="checkbox-outline" slot="end"></ion-icon>{{'title' | translate}} :
+                {{d.title}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="locate-outline" slot="end"></ion-icon>{{'address' | translate}}
+                :{{d.address}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="calendar-outline" slot="end"></ion-icon> {{'date' | translate}}
+                :{{d.date}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="time-outline" slot="end"></ion-icon> {{'time' | translate}}:
+                {{d.time}}
+              </p>
+              <p>
+                <ion-icon class="ion-icon2" name="eye-outline" slot="end"></ion-icon> {{'Views' | translate}}
+                {{d.views}}
+                {{'customer view' | translate}}
+              </p>
+            </div>
+          </ion-label>
+        </ion-item>
+        <hr style="border:1px dashed darkgray; margin-top:0px !important">
+        <ion-row>
+          <div style="display: flex;
+              width: 100%;
+              justify-content: space-between;
+              margin-top: -4%;">
+            <div style="margin-left: 10px;">
+              <h5>{{'speciality' | translate}} : {{d.speciality}} <ion-icon name="checkbox-outline" slot="start">
+                </ion-icon>
+              </h5>
+            </div>
+            <div style="margin-right: 10px;">
+              <h5> {{'price' | translate}} : {{d.price}} LE <ion-icon name="cash-outline" slot="end"></ion-icon>
+              </h5>
+            </div>
+          </div>
+          <div style="margin-left: auto; margin-right: auto;">
+            <h5>{{'waiting time' | translate}} : {{d.waiting_time}} <ion-icon name="time-outline" slot="end"></ion-icon>
+            </h5>
+          </div>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12">
+            <div style="text-align: center;">
+              <ion-button color="danger" (click)="Response(d.booking_id)"> {{'Delete date' | translate}}</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

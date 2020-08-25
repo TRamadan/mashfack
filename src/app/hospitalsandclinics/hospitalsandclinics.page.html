@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Hospitals and clinics' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center" (click)="gotoHclinics()">
+          <ion-label style="font-weight: bolder; color:#000">{{'Hospitals' | translate}}</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center" (click)="gotoClinicsCenters()">
+          <ion-label style="font-weight: bolder; color:#000">{{'Clinics' | translate}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Edit Profile' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]>
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'First Name' | translate}}</ion-label>
+          <ion-input [(ngModel)]="firstName" name="name" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'Last Name' | translate}}</ion-label>
+          <ion-input [(ngModel)]="lastName" name="lastname" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'Email' | translate}}</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label>{{'Gender' | translate}}</ion-label>
+          <ion-select placeholder="Select One" interface="popover" id="gender">
+            <ion-select-option value="male">{{'Male'|translate}}</ion-select-option>
+            <ion-select-option value="female">{{'Female'|translate}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'Age' | translate}}</ion-label>
+          <ion-input [(ngModel)]="age" name="age" type="number"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'Phone' | translate}}</ion-label>
+          <ion-input [(ngModel)]="phone" name="phone" type="tel"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'weight' | translate}}</ion-label>
+          <ion-input [(ngModel)]="weight" name="weight" type="number"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label style="font-weight: bolder;" position="floating">{{'Diseases' | translate}}</ion-label>
+          <ion-input [(ngModel)]="diseases" name="diseases" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-footer>
+  <section>
+    <ion-button style="margin-top:-2% !important" expand="full" color="danger" slot="start" (click)="UpdateProfile()">
+      <!-- <ion-icon name="checkmark-circle-outline"></ion-icon> -->
+
+      <ion-icon style="margin-right:5%;" name="checkmark-circle-outline"></ion-icon>
+      {{'Update profile' | translate}}
+    </ion-button>
+  </section>
+</ion-footer>

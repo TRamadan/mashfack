@@ -1,0 +1,44 @@
+<ion-content>
+  <section class="page" style="margin-top: 10px !important;">
+    <!-- Header Div -->
+    <div class="first-div">
+
+      <div class="general-div">
+        <h6 style="color:black">{{'General evaluation'|translate}}</h6>
+        <h6 class='Rate' style="z-index: 9999999999999 !important;position: relative;display: none;">
+          <ion-icon name="star" style="display: none;" id="1"></ion-icon>
+          <ion-icon name="star" style="display: none;" id="2"></ion-icon>
+          <ion-icon name="star" style="display: none;" id="3"></ion-icon>
+          <ion-icon name="star" style="display: none;" id="4"></ion-icon>
+          <ion-icon name="star" style="display: none;" id="5"></ion-icon>
+        </h6>
+      </div>
+    </div>
+    <!--Comments Container-->
+    <!-- <div class="comments" id="comments">
+
+
+
+
+    </div> -->
+    <div class="comment" *ngFor="let comment of comments">
+      <div class="row-2">
+        <h6 style="color: black;">
+          {{comment.comment}}
+        </h6>
+      </div>
+      <h5 style="color:black"> {{'your rating' | translate}} {{comment.rate}} {{'of' | translate}} 5 </h5>
+    </div>
+  </section>
+  <div class="layer" style="position: absolute;top:0; left:0;right: 0;bottom: 0; height: 100%;background-color: #fff;">
+  </div>
+
+</ion-content>
+<div style="height: 20%; background-color: #f7f7f7;">
+  <div class="comment-input">
+    <input type="text" type="text" placeholder="{{'Type Your Comment' | translate}}" [(ngModel)]="comment" value=" ">
+    <h5 class="sendBtn"
+      style="color:#37bed2;background-color: white;padding: 10px 15px !important;border-radius: 10px;margin:0 auto ;margin-top: 20px !important;text-align: center;width: 75%;">
+      {{'send'|translate}} </h5>
+  </div>
+</div>

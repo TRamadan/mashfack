@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Choose Location' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Logo Row -->
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size='12' class="text-center" (click)="setGovern(g.id)" (click)=" gotocity()"
+        *ngFor="let g of GovernArray">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">{{g.name}}</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <!-- <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 2</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 3</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 4</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 5</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 6</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 7</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">Location 8</ion-label>
+        </ion-item>
+      </ion-col> -->
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

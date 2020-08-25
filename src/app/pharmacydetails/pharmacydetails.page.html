@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='primary'>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#000; text-align:center; font-weight:bolder"> {{'Pharmacies' | translate}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="pharmaciesform">
+    <ion-grid class="grid-class">
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating"> {{'Patient name' | translate}}</ion-label>
+          <ion-input formControlName="name" [(ngModel)]="name" name="name" type="email"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width: 100%;">
+          <ion-label position="floating">{{'Notes' | translate}}</ion-label>
+          <ion-textarea formControlName="info" [(ngModel)]="info" name="info"></ion-textarea>
+        </ion-item>
+      </ion-row>
+      <div (click)="ClickInput()">
+
+
+        <div id="uploadimage" style="margin: 0 auto !important;text-align: center;width: 100%;">
+          <span>
+            <img style="width:20%;margin-top: 3%;" src="../../assets/images/download.png">
+          </span>
+          <br>
+          <h6 style="color:black; font-weight: bold;"> {{'Click here to upload your prespection' | translate}}</h6>
+        </div>
+
+        <ion-item lines="none" style="background-color: transparent;">
+          <form>
+            <input style="padding: 5px 20px !important;margin-top: 10px !important; display: none;" type="file"
+              name="image" id="uploadinput" (change)="changeListener($event.target.files)">
+          </form>
+        </ion-item>
+      </div>
+      <section>
+        <ion-button [disabled]="!pharmaciesform.valid" (click)="uploadimage2()" style="margin-top:-2% !important"
+          shape="round" expand="block" color="danger" slot="start">
+          <ion-icon style="margin-right:5%;" name="cloud-upload-outline"></ion-icon>
+          {{'Send data' |  translate}}
+        </ion-button>
+      </section>
+
+    </ion-grid>
+  </form>
+</ion-content>

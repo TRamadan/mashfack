@@ -1,0 +1,7 @@
+{
+  "name": "meshfak",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

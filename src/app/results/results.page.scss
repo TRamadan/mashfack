@@ -1,0 +1,41 @@
+.button-inner ion-icon{
+    color: #37bed2 !important;
+}
+ion-content{
+    *{
+        color:#37bed2;
+    }
+
+   
+
+    h6{
+        margin-top: 3px;
+        font-weight: 600;
+    }
+
+    ion-item{
+        margin-bottom: 5px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 3px grey;
+    }
+
+    --ion-background-color:#37bed2;
+
+    .nav-tabs{
+        border-bottom: none;
+    }
+    .nav-link{
+        padding: 3px;
+        margin: 0 3px;
+        color: #37bed2;
+        background-color: #fff;
+        text-align: center;
+    }
+    .nav-tabs .nav-link.active {
+        color: #37bed2;
+        background-color: #fff;
+        border-color: #dee2e6 #dee2e6 #fff;
+    }
+
+    
+}

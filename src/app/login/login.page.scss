@@ -1,0 +1,14 @@
+ion-toolbar {
+    --ion-toolbar-background-color: transparent;
+    --ion-toolbar-text-color: white;
+    }
+
+    section {
+        margin-top: 1em;
+        // margin-bottom: 2.5em;
+      }
+  
+      section:not(.full-width),
+      .full-width > header {
+        padding: 0 10px;
+      }

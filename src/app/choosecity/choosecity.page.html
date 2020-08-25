@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Choose City' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- Logo Row -->
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size='12' class="text-center" (click)="setCity(city.id)" (click)="gotoreveal()"
+        *ngFor="let city of CitiesArray">
+        <ion-item color='light' class="text-center">
+          <ion-label style="font-weight: bolder; color:#000">{{city.name}}</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

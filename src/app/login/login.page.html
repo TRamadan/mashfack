@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar translucent>
+    <ion-title style="text-align: center; font-size:x-large; font-weight: bolder;" color="dark">{{'Login' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen="true">
+  <!-- <img alt="appicon" style="width: 35%;
+  height: 22%; display: block; margin-left: auto; margin-right:auto; border-radius:50%;margin-top:1%;"
+    src="assets/images/finallogo.jpeg" /> -->
+  <img src="../../assets/images/icon.png"
+    style="height: 22%; display: block; margin-left: auto; margin-right:auto; border-radius:50%;margin-top:1%">
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Email' | translate}}</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Password' | translate}}</ion-label>
+          <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+        </ion-item>
+      </ion-row>
+      <section>
+        <ion-button style="font-weight: bolder;" fill="clear" color="dark" routerLink="/register" expand="block">
+          {{'DONT HAVE AN ACCOUNT , SIGN UP HERE' | translate}}</ion-button>
+      </section>
+      <section>
+        <ion-button shape="round" expand="block" slot="start" (click)="facebooklogin()">
+          <ion-icon style="margin-right: 5%;" name="logo-facebook"></ion-icon>
+          {{'Continue with facebook' | translate}}
+        </ion-button>
+      </section>
+      <ion-row>
+        <p style="margin-left:auto; margin-right:auto; margin-top:3%">
+          {{'OR' | translate}}
+        </p>
+      </ion-row>
+      <section>
+        <ion-button (click)="GmailLogin()" style="margin-top:-2% !important" shape="round" expand="block" color="danger"
+          slot="start">
+          <ion-icon style="margin-right:5%;" name="logo-google"></ion-icon>
+          {{'Continue with gmail' | translate}}
+        </ion-button>
+      </section>
+      <section>
+        <ion-button style="font-weight: bolder;" fill="clear" color="dark" routerLink="/forgotpassword" expand="block">
+          {{'forgot password' | translate}} </ion-button>
+      </section>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-footer [translucent]="true" no-border>
+  <section>
+    <ion-button (click)="OnLogin()" style="margin-top:-2% !important" expand="full" color="danger" slot="start">
+      <ion-icon style="margin-right:5%;" name="enter-outline"></ion-icon>
+      {{'LOGIN' | translate}}
+    </ion-button>
+  </section>
+</ion-footer>

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='primary'>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:#000; text-align:center; font-weight:bolder"> {{'Forgot password details' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="forgotdata">
+    <ion-grid class="grid-class">
+      <ion-row>
+        <ion-item style="width:100%;">
+          <ion-label position="floating">{{'Type here a valid registered email again' | translate}}</ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item style="width:100%;">
+          <ion-label position="floating">{{'Enter the recieved code' | translate}}</ion-label>
+          <ion-input formControlName="token" type="text"></ion-input>
+        </ion-item>
+        <ion-item style="width:100%;">
+          <ion-label position="floating">{{'Enter the new password' | translate}}</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+        <ion-item style="width:100%;">
+          <ion-label position="floating">{{'Enter the confirm new password' | translate}}</ion-label>
+          <ion-input formControlName="password_confirmation" type="password"></ion-input>
+        </ion-item>
+      </ion-row>
+      <br>
+      <br>
+      <section>
+        <ion-button (click)="sendData()" style="margin-top:-2% !important" shape="round" expand="block" color="danger"
+          slot="start">
+          <ion-icon style="margin-right:5%;" name="cloud-upload-outline"></ion-icon>
+          {{'Send2' | translate}}
+        </ion-button>
+      </section>
+      <!-- <section>
+        <ion-button style="font-weight: bolder;" fill="clear" color="dark" routerLink="/register" expand="block">
+          Forgot password ? </ion-button>
+      </section> -->
+    </ion-grid>
+  </form>
+  <!-- <form>
+    <ion-grid>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">الإسم</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width: 100%;">
+          <ion-label position="floating">ملاحظات</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </ion-row>
+
+      <section>
+        <ion-button (click)="uploadimage()" style="margin-top:-2% !important" fill="clear" shape="round" expand="block"
+          color="danger" slot="start">
+          <ion-icon style="margin-right:5%;" name="cloud-upload-outline"></ion-icon>
+          إرفع الروشتة
+        </ion-button>
+      </section>
+    </ion-grid>
+  </form> -->
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Choose reveal type' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div *ngIf="this.category == 1">
+      <ion-col size='12' class="text-center" *ngFor="let r of Reveals">
+        <ion-item color='light' class="text-center" (click)="SetReveal(r.id ,r.name)" (click)="gotodrdetils()">
+          <ion-label style="font-weight: bolder; color:#000">{{r.name}}</ion-label>
+        </ion-item>
+      </ion-col>
+
+    </div>
+
+    <div *ngIf="this.category == 2">
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center" (click)="SetReveal(1)" (click)="gotodrdetils()">
+          <ion-label style="font-weight: bolder; color:#000">{{'sample inside the laboratory' | translate}}</ion-label>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size='12' class="text-center">
+        <ion-item color='light' class="text-center" (click)="SetReveal(2)" (click)="gotodrdetils()">
+          <ion-label style="font-weight: bolder; color:#000">{{'sample inside home' | translate}}</ion-label>
+        </ion-item>
+      </ion-col>
+
+    </div>
+
+    <!-- here will be the another section for the lab analysis-->
+    <!-- <ion-row class="ion-justify-content-center">
+
+    </ion-row> -->
+  </ion-grid>
+
+</ion-content>

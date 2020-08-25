@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" color='dark'>
+      <ion-back-button color="dark" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title color='dark' style="text-align: center; font-weight: bolder;">{{'Laboratories and analysis' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form>
+      <ion-grid class="grid-class">
+
+        <ion-row>
+          <ion-item style="width:100%">
+            <ion-label position="floating">{{'Patient name' | translate}}</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <ion-row>
+          <ion-item style="width:100%">
+            <ion-label position="floating">{{'Address' | translate}}</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-row>
+
+        <br>
+        <br>
+        <section>
+          <ion-button (click)="SendData()" style="margin-top:-2% !important" shape="round" expand="block" color="danger"
+            slot="start">
+            <ion-icon style="margin-right:5%;" name="cloud-upload-outline"></ion-icon>
+            {{'Send3' | translate}}
+          </ion-button>
+        </section>
+
+      </ion-grid>
+    </form>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="text-align: center; font-size: x-large;
+    font-weight: bolder;" color="dark">{{'Register' | translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen="true">
+  <form>
+    <ion-grid>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'First Name' | translate}}</ion-label>
+          <ion-input [(ngModel)]="firstName" name="firstName" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Last Name' | translate}}</ion-label>
+          <ion-input [(ngModel)]="lastName" name="lastName" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Email' | translate}}</ion-label>
+          <ion-input [(ngModel)]="email" name="email" type="email"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label>{{'Gender' | translate}}</ion-label>
+          <ion-select placeholder="Select One" interface="popover" id="gender">
+            <ion-select-option value="male">{{'Male'|translate}}</ion-select-option>
+            <ion-select-option value="female">{{'Female'|translate}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Password' | translate}}</ion-label>
+          <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Confirm Password' | translate}}</ion-label>
+          <ion-input [(ngModel)]="passwordConfirm" name="confirmapassword" type="password"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'weight' | translate}}</ion-label>
+          <ion-input [(ngModel)]="weight" name="weight" type="number"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Age' | translate}}</ion-label>
+          <ion-input [(ngModel)]="age" name="age" type="number"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Mobile number' | translate}}</ion-label>
+          <ion-input [(ngModel)]="phone" name="phone" type="tel" max></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item style="width:100%">
+          <ion-label position="floating">{{'Diseases' | translate}}</ion-label>
+          <ion-input [(ngModel)]="diseases" name="diseases" type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <section>
+        <ion-button shape="round" expand="block" slot="start" (click)="facebookRegister()">
+          <ion-icon style="margin-right: 5%;" name="logo-facebook"></ion-icon>
+          {{'Continue with facebook' | translate}}
+        </ion-button>
+      </section>
+      <ion-row>
+        <p style="margin-left:auto; margin-right:auto; margin-top:3%">
+          {{'OR' | translate}}
+        </p>
+      </ion-row>
+      <section>
+        <ion-button style="margin-top:-2% !important" shape="round" expand="block" color="danger" slot="start">
+          <ion-icon style="margin-right:5%;" name="logo-google"></ion-icon>
+          {{'Continue with gmail' | translate}}
+        </ion-button>
+      </section>
+    </ion-grid>
+  </form>
+</ion-content>
+<ion-footer>
+  <section>
+    <ion-button style="margin-top:-2% !important" expand="full" color="primary" slot="start" (click)="OnRegister()">
+      <ion-icon style="margin-right:5%;" name="enter-outline"></ion-icon>
+      {{'Register now' | translate}}
+    </ion-button>
+  </section>
+</ion-footer>

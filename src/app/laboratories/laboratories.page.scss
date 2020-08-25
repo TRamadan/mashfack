@@ -1,0 +1,29 @@
+ion-content{
+    --ion-background-color:#f7f7f7;
+
+} 
+section {
+    margin-top: 1em;
+    // margin-bottom: 2.5em;
+  }
+
+  section:not(.full-width),
+  .full-width > header {
+    padding: 0 10px;
+  } 
+
+.grid-class
+{
+  border: 2px solid;
+  margin-top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-radius: 4%;
+  margin-bottom: 42%;
+}
+
+ion-content{
+      --ion-background-color:#f7f7f7;
+
+}
